@@ -1,0 +1,109 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.user{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+.user-container{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(214, 214, 214);
+}
+.title-and-username {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.name-and-img {
+    display: flex;
+    justify-content: space-between;
+}
+.name-and-role {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.username {
+    margin: 0px;
+    padding: 0px;
+    margin-right: 10px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.role {
+    margin: 0px;
+    padding: 0px;
+    margin-right: 10px;
+    font-size: 11px;
+}
+input{
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.search{
+    background-color: white;
+    padding: 5px;
+    padding-bottom: 6px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.inputDiv{
+    display: flex;
+    align-items: center;
+}
+.users-data{
+    margin-top: 10px;
+    height: fit-content;
+    max-height: 350px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+.titles{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.id{
+    width: 80px;
+    /* background-color: white; */
+}
+.name{
+    width: 250px;
+    /* background-color: aqua; */
+}
+.email{
+    width: 400px;
+    /* background-color: yellow; */
+}
+.dept{
+    width: 150px;
+    /* background-color: white; */
+}
+.position{
+    width: 250px;
+    /* background-color: aqua; */
+}
+.show-users{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+.scroll{
+    overflow-y: auto;
+}

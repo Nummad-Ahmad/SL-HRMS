@@ -1,0 +1,61 @@
+.auth{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    box-sizing:border-box;
+    position: relative;
+    /* background-color: rgb(187, 204, 224); */
+} 
+.imageDiv{
+    position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+    background-image: url('../public/background.jpeg');
+    background-size: cover;
+    filter: blur(5px);
+    z-index: -1;
+}
+.contentDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(182, 193, 207, 0.6);
+    height: fit-content;
+    width: 300px;
+    z-index: 1;
+    padding: 10px;
+    border-radius: 10px;   
+}
+input{
+    margin: 10px 0px;
+    padding: 10px;
+    width: 90%;
+    /* background-color: rgba(182, 193, 207, 1); */
+    background-color: rgba(255, 255, 255, 0.5);
+    /* border: 1px solid whitesmoke; */
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+.btn{
+    width: 97%;
+    background-color: rgba(182, 193, 207, 0.9);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.rightText{
+    margin: 0px;
+    padding: 0px;
+    width: 97%;
+    text-align: right;
+    cursor: pointer;
+}

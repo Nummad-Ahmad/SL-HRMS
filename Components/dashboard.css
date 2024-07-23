@@ -1,0 +1,154 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.dashboard {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.dash-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(214, 214, 214);
+}
+
+.title-and-username {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.username {
+    margin: 0px;
+    padding: 0px;
+    margin-right: 10px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.role {
+    margin: 0px;
+    padding: 0px;
+    margin-right: 10px;
+    font-size: 11px;
+}
+
+.name-and-img {
+    display: flex;
+    justify-content: space-between;
+}
+
+.name-and-role {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.ayat-container {
+    background-color: rgba(182, 193, 207, 1);
+    height: fit-content;
+    border-radius: 5px;
+    padding-left: 20px;
+}
+
+.Ayat {
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.event-and-gender {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.event {
+    display: flex;
+    background-color: white;
+    width: 59%;
+    border-radius: 5px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+
+.gender {
+    display: flex;
+    width: 39%;
+    background-color: white;
+    border-radius: 5px;
+    height: 200px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
+
+.pie-chart-container {
+    height: 190px
+}
+
+.team-and-birthdays {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+.team-container{
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    background-color: white;
+    border-radius: 5px;
+    height: 200px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.birthdays-container{
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    background-color: white;
+    border-radius: 5px;
+    height: 200px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+h4{
+    padding: 0px;
+    margin: 0px;
+    font-weight: normal;
+}
+.row{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.blue-text{
+    color: rgb(93, 126, 168);
+    font-weight: bold;
+    cursor: pointer;
+}
+.bold-text{
+    font-weight: bold;
+}
+.name-and-pic{
+    display: flex;
+}
+.name-and-designation{
+    display: flex;
+    flex-direction: column;
+}
+.nameAndDesignation{
+    font-size: 15px;
+}
+.designation{
+    color: gray;
+}
