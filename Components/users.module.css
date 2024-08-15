@@ -1,0 +1,180 @@
+.user{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+.usercontainer{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(225, 225, 227);
+}
+.titleandusername {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nameandimg {
+    display: flex;
+    justify-content: space-between;
+}
+.nameandrole {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.username {
+    margin: 0px;
+    padding: 0px;
+    margin-right: 10px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.role {
+    margin: 0px;
+    padding: 0px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+.input{
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    width: 30%;
+    text-decoration: underline;
+    text-decoration-color: gray;
+}
+.search{
+    background-color: white;
+    padding: 5px;
+    padding-bottom: 6px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+}
+.inputDiv{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    justify-content: space-between;
+    padding-right: 10px;
+    box-sizing: border-box;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.usersdata{
+    height: fit-content;
+    max-height: 350px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.titles{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.id{
+    width: 80px;
+    /* background-color: white; */
+}
+.name{
+    width: 180px;
+    /* background-color: aqua; */
+    display: flex;
+}
+.email{
+    width: 220px;
+}
+.dept{
+    width: 150px;
+    /* background-color: white; */
+}
+.position{
+    width: 200px;
+    /* background-color: aqua; */
+}
+.salary{
+    width: 150px;
+}
+.showusers{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+.scroll{
+    overflow-y: auto;
+}
+.profilepic{
+    border-radius: 100px;
+}
+.noData{
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.p{
+    margin: 0px;
+    padding: 0px;
+}
+.buttonDiv{
+    display: flex;
+    justify-content: flex-end;
+}
+.btn{
+    color: white;
+    background-color: rgb(96, 69, 192);
+    padding: 5px 10px;
+    width: 90px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.arrow{
+    display: flex; 
+    flex-direction: column; 
+    height: 15px;
+    justify-content: space-between;
+    margin-left: 2px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+.select{
+    margin-left: 10px;
+    max-width: 100px;
+    width: fit-content;
+}
+.pagination{
+    margin-top: 20px;
+    width: 200px;
+    display: flex;
+    gap: 5px;
+}
+.paginationnumber{
+    padding: 5px;
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.activeIndex{
+    background-color: rgb(9, 184, 210);
+}

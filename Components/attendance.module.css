@@ -1,0 +1,136 @@
+.attedance{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+.attedancecontainer{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(225, 225, 227);
+}
+.titleandusername {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nameandimg {
+    display: flex;
+    justify-content: space-between;
+}
+.nameandrole {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.username {
+    margin: 0px;
+    padding: 0px;
+    margin-right: 10px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.role {
+    margin: 0px;
+    padding: 0px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+.statscontainer{
+    background-color: white;
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+.headingspart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.row{
+    display: flex;
+    width: 200px;
+    justify-content: flex-end;
+}
+.details{
+    margin-top: 10px;
+    height: fit-content;
+    max-height: 350px;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.showmonth{
+    font-weight: bold;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom: 1px solid rgb(214, 214, 214);
+    display: flex;
+    justify-content: center;
+}
+.date{
+    margin: 0px 20px;
+    display: inline-block;
+}
+.detaileddata{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom: 1px solid gray;
+}
+.heading{
+    width: 200px;
+}
+.spaceRight{
+    padding-right: 15px;
+}
+.scroll{
+    overflow-y: auto;
+}
+.profilepic{
+    border-radius: 100px;
+}
+.noData{
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.p{
+    margin: 0px;
+    padding: 0px;
+}
+.h3{
+    margin: 0px;
+    padding: 0px;
+}
+.pagination{
+    margin-top: 20px;
+    width: 200px;
+    display: flex;
+    gap: 5px;
+}
+.paginationnumber{
+    padding: 5px;
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.activeIndex{
+    background-color: rgb(9, 184, 210);
+}

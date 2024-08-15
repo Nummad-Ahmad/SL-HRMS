@@ -1,30 +1,32 @@
-body{
+/* body{
     margin: 0px;
     padding: 0px;
-}
-.user{
+} */
+.attedance{
     display: flex;
     height: 100vh;
     width: 100%;
+    margin: 0px;
+    padding: 0px;
 }
-.user-container{
+.attedancecontainer{
     display: flex;
     flex-direction: column;
     padding: 0px 20px;
     height: 100%;
     width: 100%;
-    background-color: rgb(214, 214, 214);
+    background-color: rgb(225, 225, 227);
 }
-.title-and-username {
+.titleandusername {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.name-and-img {
+.nameandimg {
     display: flex;
     justify-content: space-between;
 }
-.name-and-role {
+.nameandrole {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -43,60 +45,46 @@ body{
     margin-right: 10px;
     font-size: 11px;
 }
-input{
-    border: none;
-    outline: none;
-    padding: 10px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-.search{
+.statscontainer{
     background-color: white;
-    padding: 5px;
-    padding-bottom: 6px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    box-sizing: border-box;
 }
-.inputDiv{
+.headingspart{
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
-.users-data{
+.row{
+    display: flex;
+    width: 200px;
+    justify-content: flex-end;
+}
+.details{
     margin-top: 10px;
     height: fit-content;
     max-height: 350px;
     width: 100%;
     background-color: white;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
 }
-.titles{
-    display: flex;
-    width: 100%;
+.showmonth{
+    font-weight: bold;
     padding: 10px;
     box-sizing: border-box;
+    width: 100%;
+    border-bottom: 1px solid rgb(214, 214, 214);
 }
-.id{
-    width: 80px;
-    /* background-color: white; */
+.date{
+    margin: 0px 20px;
+    display: inline-block;
 }
-.name{
-    width: 250px;
-    /* background-color: aqua; */
-}
-.email{
-    width: 400px;
-    /* background-color: yellow; */
-}
-.dept{
-    width: 150px;
-    /* background-color: white; */
-}
-.position{
-    width: 250px;
-    /* background-color: aqua; */
-}
-.show-users{
+.detaileddata{
     display: flex;
     width: 100%;
     padding: 10px;
@@ -104,6 +92,29 @@ input{
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
 }
+.heading{
+    width: 25%;
+}
+.spaceRight{
+    padding-right: 15px;
+}
 .scroll{
     overflow-y: auto;
+}
+.profilepic{
+    border-radius: 100px;
+}
+.noData{
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.p{
+    margin: 0px;
+    padding: 0px;
+}
+.lightText{
+    color: gray;
 }

@@ -74,4 +74,25 @@ export const usersArray = [
         dept: 'Development',
         position: 'Mobile App Dev'
     },
+    {
+        id: 11,
+        name: 'Ali',
+        email: 'ali12@gmail.com',
+        dept: 'Developer',
+        position: 'Web Developer'
+    },
+    {
+        id: 12,
+        name: 'Adeeba',
+        email: 'adeeba@gmail.com',
+        dept: 'HR',
+        position: 'Human Resource'
+    },
+    {
+        id: 13,
+        name: 'Nida',
+        email: 'nida@gmail.com',
+        dept: 'HR',
+        position: 'Human Resource'
+    },
 ];

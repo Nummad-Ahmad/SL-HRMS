@@ -1,24 +1,19 @@
-body {
-    margin: 0px;
-    padding: 0px;
-}
-
 .dashboard {
     display: flex;
     height: 100vh;
     width: 100%;
 }
 
-.dash-container {
+.dashContainer {
     display: flex;
     flex-direction: column;
     padding: 0px 20px;
     height: 100%;
     width: 100%;
-    background-color: rgb(214, 214, 214);
+    background-color: rgb(225, 225, 227);
 }
 
-.title-and-username {
+.titleandusername {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,22 +31,22 @@ body {
     margin: 0px;
     padding: 0px;
     margin-right: 10px;
-    font-size: 11px;
+    font-size: 14px;
 }
 
-.name-and-img {
+.nameandimg {
     display: flex;
     justify-content: space-between;
 }
 
-.name-and-role {
+.nameandrole {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 
-.ayat-container {
-    background-color: rgba(182, 193, 207, 1);
+.ayatcontainer {
+    background-color: rgba(0, 79, 206, 0.8);
     height: fit-content;
     border-radius: 5px;
     padding-left: 20px;
@@ -60,9 +55,10 @@ body {
 .Ayat {
     font-size: medium;
     font-family: Arial, Helvetica, sans-serif;
+    color: white;
 }
 
-.event-and-gender {
+.eventandgender {
     display: flex;
     margin-top: 10px;
     justify-content: space-between;
@@ -91,39 +87,49 @@ body {
     box-sizing: border-box;
 }
 
-.pie-chart-container {
+.piechartcontainer {
     height: 190px
 }
 
-.team-and-birthdays {
+.teamandbirthdays {
     display: flex;
     margin-top: 10px;
     justify-content: space-between;
 }
-.team-container{
+.teamcontainer{
     display: flex;
     flex-direction: column;
     width: 49%;
     background-color: white;
     border-radius: 5px;
-    height: 200px;
+    height: 290px;
     padding: 10px;
     box-sizing: border-box;
+    margin-bottom: 10px;
 }
-.birthdays-container{
+.birthdayscontainer{
     display: flex;
     flex-direction: column;
     width: 49%;
     background-color: white;
     border-radius: 5px;
-    height: 200px;
+    height: 290px;
     padding: 10px;
     box-sizing: border-box;
+    overflow-y: auto;
+    margin-bottom: 10px;
 }
-h4{
+
+.h4{
     padding: 0px;
     margin: 0px;
     font-weight: normal;
+    margin: 0px;
+    padding: 0px;
+}
+.p{
+    padding: 0px;
+    margin: 0px;
 }
 .row{
     display: flex;
@@ -131,24 +137,38 @@ h4{
     justify-content: space-between;
     margin-bottom: 20px;
 }
-.blue-text{
+.bluetext{
     color: rgb(93, 126, 168);
     font-weight: bold;
     cursor: pointer;
+    margin: 0px;
+    padding: 0px;
 }
-.bold-text{
+.boldtext{
     font-weight: bold;
+    margin: 0px;
+    padding: 0px;
 }
-.name-and-pic{
+.nameandpic{
     display: flex;
 }
-.name-and-designation{
+.nameAndDesignationDiv{
     display: flex;
     flex-direction: column;
+    margin-left: 10px;
 }
 .nameAndDesignation{
     font-size: 15px;
 }
 .designation{
     color: gray;
+    margin: 0px;
+    padding: 0px;
+}
+.profilePic{
+    border-radius: 100px;
+}
+.scroll{
+    overflow-y: auto;
+    width: 49%;
 }

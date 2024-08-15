@@ -1,0 +1,181 @@
+.requests {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.requestscontainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(214, 214, 214);
+}
+
+.titleandusername {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nameandimg {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nameandrole {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.username {
+    margin: 0px;
+    padding: 0px;
+    margin-right: 10px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.role {
+    margin: 0px;
+    padding: 0px;
+    margin-right: 10px;
+    font-size: 11px;
+}
+
+.statscontainer {
+    background-color: white;
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+.headingspart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.detaileddata {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+
+}
+
+.scroll {
+    overflow-y: auto;
+}
+
+.details {
+    height: 400px;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.headingspart>p {
+    margin: 0px;
+    padding: 0px;
+}
+
+.type {
+    width: 20%;
+}
+
+.days {
+    width: 19%;
+}
+
+.date {
+    width: 15%;
+}
+
+.pm {
+    width: 20%;
+}
+
+.status {
+    width: 18%;
+}
+
+.addreq {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.addbutton {
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: rgb(96, 69, 192);
+}
+
+.light {
+    color: gray;
+}
+
+.formDiv {
+    height: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    box-sizing: border-box;
+}
+
+.question {
+    background-color: white;
+    display: flex;
+    margin: 0px;
+    padding: 10px;
+    width: 40%;
+    justify-content: space-between;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.btnDiv {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 60px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(96, 69, 192);
+    color: white;
+}
+
+.p {
+    margin: 0px;
+}
+
+.dateInput {
+    width: 20px;
+}
+
+.statusBox {
+    padding: 0px;
+}
+.select{
+    height: 30px;
+}

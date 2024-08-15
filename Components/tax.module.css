@@ -1,0 +1,159 @@
+
+.requests {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.requestscontainer{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(225, 225, 225);
+}
+.titleandusername {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nameandimg {
+    display: flex;
+    justify-content: space-between;
+}
+.nameandrole {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.username {
+    margin: 0px;
+    padding: 0px;
+    margin-right: 10px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.role {
+    margin: 0px;
+    padding: 0px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+.statscontainer{
+    background-color: white;
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    margin: 0px;
+}
+.headingspart{
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+.detaileddata{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+.scroll{
+    overflow-y: auto;
+}
+.details{
+    height: fit-content;
+    max-height: 400px;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.headingspart > p{
+    margin: 0px;
+    padding: 0px;
+}
+.month{
+    width: 350px;
+}
+.amount{
+    width: 200px;
+}
+.status{
+    width: 250px;
+}
+.addreq{
+    display: flex;
+    justify-content: flex-end;
+}
+.addbutton{
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.profilepic{
+    border-radius: 100px;
+}
+.noData{
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.buttonDiv{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+.btn{
+    color: white;
+    background-color: rgba(0, 79, 206, 0.8);
+    padding: 5px 10px;
+    width: 90px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.h3{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+}
+.pagination{
+    margin-top: 20px;
+    width: 200px;
+    display: flex;
+    gap: 5px;
+}
+.paginationnumber{
+    padding: 5px;
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.activeIndex{
+    background-color: rgb(9, 184, 210);
+}
+.arrow{
+    display: flex; 
+    flex-direction: column; 
+    height: 15px;
+    justify-content: space-between;
+    margin-left: 2px;
+    cursor: pointer;
+    margin-top: 5px;
+}
