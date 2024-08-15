@@ -2,7 +2,7 @@
 import Header from "./shared/header";
 import Image from "next/image";
 import ProfilePic from '@/public/profile pic.png';
-import NoData from '@/public/nodata.png';
+import NoData from '@/public/noData.png';
 import style from './project.module.css';
 import '@/app/mainpage.css';
 import { useRouter } from "next/navigation";
