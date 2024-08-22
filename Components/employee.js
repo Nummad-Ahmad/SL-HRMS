@@ -7,10 +7,10 @@ export default function Employee({ id, name, email, dept, position, salary }) {
     const [requiredUser, setRequiredUser] = useState({});
     useEffect(() => {
         axios.get(`http://localhost:8000/user/${savedUser.user}`).then(res => setRequiredUser(res.data)).catch(e => console.log(e));
-    });
+    },[]);
     const Position = requiredUser.position;
     return (
-        <div className={style.showusers}>
+        <div className={`${style.showusers} ${ id % 2 == 0 ? style.even : ''}`}>
             <div className={style.id}>
                 <p className={style.p}>{id}</p>
             </div>

@@ -60,76 +60,96 @@ export default function TaxPage() {
                     {
                         tax.length != 0 ?
                             <>
-                                <div className={style.statscontainer}>
-                                    <div className={style.headingspart}>
-                                        <div className={style.month}><h3 className={style.h3}>Month</h3></div>
-                                        <div className={style.amount}>
-                                            <h3 className={style.h3}>
-                                                Tax amount
-                                                <span className={style.arrowcontainer}>
-                                                    <div className={style.arrow}><FaArrowUp onClick={() => ascendingSort()} size={6} /><FaArrowDown onClick={() => descendingSort()} size={6} /></div>
-                                                </span>
-                                            </h3></div>
-                                        <div className={style.status}><h3 className={style.h3}>Status</h3></div>
-                                        {
-                                            (Position === 'Human Resource' || Position === 'Admin') &&
-                                            <div className={style.status}><h3 className={style.h3}>Email</h3></div>
-                                        }
+                                <div className={style.shadow}>
+                                    <div className={style.statscontainer}>
+                                        <div className={style.headingspart}>
+                                            <div className={style.month}><h3 className={style.h3}>Month</h3></div>
+                                            <div className={style.amount}>
+                                                <h3 className={style.h3}>
+                                                    Tax amount
+                                                    <span className={style.arrowcontainer}>
+                                                        <div className={style.arrow}><FaArrowUp onClick={() => ascendingSort()} size={6} /><FaArrowDown onClick={() => descendingSort()} size={6} /></div>
+                                                    </span>
+                                                </h3></div>
+                                            <div className={style.status}><h3 className={style.h3}>Status</h3></div>
+                                            {
+                                                (Position === 'Human Resource' || Position === 'Admin') &&
+                                                <div className={style.status}><h3 className={style.h3}>Email</h3></div>
+                                            }
+                                            <div className={style.btndiv} onClick={handleClick}>
+                                                <button className={style.btn}>Add tax</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className={style.details}>
-                                    <div className={style.scroll}>
-                                        {
-                                            (Position === 'Human Resource' || Position === 'Admin') ?
-                                                tax.map((item, index) => {
-                                                    return (
-                                                        <div className={style.detaileddata} key={index}>
-                                                            <div className={style.month}>{item.month}</div>
-                                                            <div className={style.amount}>{item.amount}</div>
-                                                            <div className={style.status}>{item.status}</div>
-                                                            {
-                                                                ((Position === 'Human Resource' || Position === 'Admin')) &&
-                                                                <div className={style.status}>{item.email}</div>
-                                                            }
-                                                        </div>
+                                    <div className={style.details}>
+                                        <div className={style.scroll}>
+                                            {
+                                                (Position === 'Human Resource' || Position === 'Admin') ?
+                                                    tax.map((item, index) => {
+                                                        return (
+                                                            <div className={`${style.detaileddata} ${index % 2 == 1 ? style.even : ''}`} key={index}>
+                                                                <div className={style.month}>{item.month}</div>
+                                                                <div className={style.amount}>{item.amount}</div>
+                                                                <div className={style.status}>{item.status}</div>
+                                                                {
+                                                                    ((Position === 'Human Resource' || Position === 'Admin')) &&
+                                                                    <div className={style.status}>{item.email}</div>
+                                                                }
+                                                            </div>
 
-                                                    );
-                                                }) :
-                                                filteredData.map((item, index) => {
-                                                    return (
-                                                        <div className={style.detaileddata} key={index}>
-                                                            <div className={style.month}>{item.month}</div>
-                                                            <div className={style.amount}>{item.amount}</div>
-                                                            <div className={style.status}>{item.status}</div>
-                                                            {/* {
+                                                        );
+                                                    }) :
+                                                    filteredData.map((item, index) => {
+                                                        return (
+                                                            <div className={style.detaileddata} key={index}>
+                                                                <div className={style.month}>{item.month}</div>
+                                                                <div className={style.amount}>{item.amount}</div>
+                                                                <div className={style.status}>{item.status}</div>
+                                                                {/* {
                                                             ((Position === 'Human Resource' || Position === 'Admin')) &&
                                                             <div className={style.status}>{item.email}</div>
                                                         } */}
-                                                        </div>
+                                                            </div>
 
-                                                    );
-                                                })
+                                                        );
+                                                    })
+                                            }
+                                        </div>
+                                    </div>
+                                    <div className={style.filterscontainer}>
+                                        {
+                                            (Position === 'Human Resource' || Position === 'Admin') ?
+                                                (lastIndex > tax.length ?
+                                                    <span>Showing <p className={style.bold}>{((tax.length))}</p> of <p className={style.bold}>{tax.length}</p></span> :
+                                                    <span>Showing <p className={style.bold}>{lastIndex}</p> of <p className={style.bold}>{tax.length}</p></span>) :
+                                                (lastIndex > filteredData.length ?
+                                                    <span>Showing <p className={style.bold}>{((lastIndex - filteredData.length) - recordsPerPage) * -1}</p> of <p className={style.bold}>{filteredData.length}</p></span> :
+                                                    <span>Showing <p className={style.bold}>{lastIndex}</p> of <p className={style.bold}>{filteredData.length}</p></span>)
                                         }
+                                        <span className={style.pagination}>
+                                            <div onClick={() => selectedIndex != 1 && setSelectedIndex(selectedIndex - 1)} className={`${style.paginationbtn} `}>Prev</div>
+
+                                            {
+                                                numbers.map((data, index) => {
+                                                    return (
+                                                        <>
+                                                            <div onClick={() => setSelectedIndex(data)} key={index} className={`${style.paginationnumber} ${selectedIndex == data ? style.activeIndex : ''}`}>{data}</div>
+                                                        </>
+                                                    )
+                                                })
+                                            }
+                                            <div onClick={() => selectedIndex != 1 && setSelectedIndex(selectedIndex - 1)} className={`${style.paginationbtn} `}>Next</div>
+
+                                        </span>
                                     </div>
                                 </div>
-                                <span className={style.pagination}>
-                                    {
-                                        numbers.map((data, index) => {
-                                            return (
-                                                <>
-                                                    <div onClick={() => setSelectedIndex(data)} key={index} className={`${style.paginationnumber} ${selectedIndex == data ? style.activeIndex : ''}`}>{data}</div>
-                                                </>
-                                            )
-                                        })
-                                    }
-                                </span>
                             </>
                             :
                             <Image className={style.noData} src={NoData} width={400} height={400} alt=""></Image>
                     }
-                    <div className={style.buttonDiv} onClick={handleClick}>
+                    {/* <div className={style.buttonDiv} onClick={handleClick}>
                         <button className={style.btn}>Add tax</button>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

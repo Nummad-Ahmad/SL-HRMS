@@ -18,7 +18,7 @@ export default function NewTaxPage() {
     const savedUser = useSelector(store => store.user).user;
     useEffect(()=>{
         axios.get(`http://localhost:8000/user/${savedUser}`).then(res => setRequiredUser(res.data)).catch(e => console.log(e));
-    });
+    }, []);
     const monthsArray = [
         { value: 'January 2024', label: 'January 2024' },
         { value: 'February 2024', label: 'February 2024' },
@@ -82,7 +82,6 @@ export default function NewTaxPage() {
                                 monthsArray.map(type => (
                                     <option key={type.value} label={type.value}>{type.value}</option>
                                 ))
-
                             }
                         </select>
                     </div>

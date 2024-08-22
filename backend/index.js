@@ -126,6 +126,28 @@ const requestsModel = mongoose.model('request', requestsSchema);
 const departmentModel = mongoose.model('department', departmentSchema);
 const taxModel = mongoose.model('tax', taxSchema);
 
+app.get('/userdata', async (req, res) => {
+    const page = parseInt(req.query.page);
+    const limit = parseInt(req.query.limit);
+    const results = {};
+    const usersData = await userModel.find();
+    const startIndex = (page - 1) * limit;
+    const endIndex = page * limit;
+    if (endIndex < usersData.length) {
+        results.next = {
+            page: page + 1,
+            limit: limit
+        }
+    }
+    if (startIndex > 0) {
+        results.previous = {
+            page: page - 1,
+            limit: limit
+        }
+    }
+    results.result = usersData.slice(startIndex, endIndex);
+    res.json(results);
+});
 app.get('/dashboard', async (req, res) => {
     const deptData = await departmentModel.find();
     res.send(deptData);
@@ -147,6 +169,28 @@ app.get('/attendance', async (req, res) => {
         console.log(e);
     }
 })
+app.get('/attendancedata', async (req, res) => {
+    const page = req.query.page;
+    const limit = req.query.limit;
+    const results = {};
+    const attendancedata = await attendanceModel.find();
+    const startIndex = (page - 1) * limit;
+    const endIndex = page * limit;
+    if (endIndex < attendancedata.length) {
+        results.next = {
+            page: page + 1,
+            limit: limit
+        }
+    }
+    if (startIndex > 0) {
+        results.previous = {
+            page: page - 1,
+            limit: limit
+        }
+    }
+    const result = attendancedata.slice(startIndex, endIndex);
+    res.json(result);
+});
 app.get('/projects', async (req, res) => {
     try {
         const projectsData = await projectModel.find();

@@ -1,4 +1,4 @@
-import { Pie } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -8,11 +8,9 @@ const PieChart = ({male, female}) => {
     labels: ['Male', 'Female'],
     datasets: [
       {
-        label: 'Total employees',
+        label: 'Total',
         data: [male, female],
-        backgroundColor: ['blue', 'red'],
-        borderColor: ['blue', 'red'],
-        borderWidth: 1,
+        backgroundColor: ['rgb(9, 184, 210)', 'rgba(0, 79, 206, 0.75)'],
       },
     ],
   };
@@ -26,7 +24,7 @@ const PieChart = ({male, female}) => {
     },
   };
 
-  return <Pie data={data} options={options} />;
+  return <Doughnut data={data} options={options} />;
 };
 
 export default PieChart;

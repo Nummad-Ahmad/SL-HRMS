@@ -84,7 +84,6 @@ export default function Header() {
     function setVisibility() {
         setCollapsed(prev => !prev);
     }
-    console.log('isCollapsed', isCollapsed);
     return (
         <>
             {

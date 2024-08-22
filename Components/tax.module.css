@@ -1,11 +1,10 @@
-
 .requests {
     display: flex;
     height: 100vh;
     width: 100%;
 }
 
-.requestscontainer{
+.requestscontainer {
     display: flex;
     flex-direction: column;
     padding: 0px 20px;
@@ -13,20 +12,24 @@
     width: 100%;
     background-color: rgb(225, 225, 225);
 }
+
 .titleandusername {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .nameandimg {
     display: flex;
     justify-content: space-between;
 }
+
 .nameandrole {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
+
 .username {
     margin: 0px;
     padding: 0px;
@@ -41,33 +44,40 @@
     margin-right: 10px;
     font-size: 14px;
 }
-.statscontainer{
+
+.statscontainer {
     background-color: white;
-    width: 100%;
-    height: 30px;
+    height: 50px;
     border-radius: 5px;
     padding: 5px 10px;
     box-sizing: border-box;
     margin: 0px;
-}
-.headingspart{
     display: flex;
     align-items: center;
-    padding-right: 20px;
+    width: 100%;
 }
-.detaileddata{
+
+.headingspart {
+    display: flex;
+    align-items: center;
+    /* padding-right: 20px; */
+    width: 100%;
+}
+
+.detaileddata {
     display: flex;
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
+    border-top: 1px solid rgb(225, 225, 225);
+    border-bottom: 1px solid rgb(225, 225, 225);
 }
 
-.scroll{
+.scroll {
     overflow-y: auto;
 }
-.details{
+
+.details {
     height: fit-content;
     max-height: 400px;
     width: 100%;
@@ -76,67 +86,73 @@
     display: flex;
     flex-direction: column;
 }
-.headingspart > p{
+
+.headingspart>p {
     margin: 0px;
     padding: 0px;
 }
-.month{
-    width: 350px;
-}
-.amount{
+
+.month {
     width: 200px;
 }
-.status{
-    width: 250px;
+
+.amount {
+    width: 200px;
 }
-.addreq{
+
+.status {
+    width: 200px;
+}
+
+.addreq {
     display: flex;
     justify-content: flex-end;
 }
-.addbutton{
-    margin-top: 20px;
+
+.addbutton {
+    /* margin-top: 20px; */
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 8px 10px;
+    background-color: rgba(0, 79, 206, 0.8);
+    color: white;
 }
-.profilepic{
+
+.profilepic {
     border-radius: 100px;
 }
-.noData{
+
+.noData {
     width: 100%;
     height: 100%;
     overflow-y: hidden;
     margin-bottom: 20px;
     border-radius: 5px;
 }
-.buttonDiv{
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
-}
-.btn{
+
+.btn {
     color: white;
     background-color: rgba(0, 79, 206, 0.8);
     padding: 5px 10px;
     width: 90px;
-    margin-top: 20px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
 }
-.h3{
+
+.h3 {
     margin: 0px;
     padding: 0px;
     display: flex;
 }
-.pagination{
-    margin-top: 20px;
-    width: 200px;
+
+.pagination {
     display: flex;
     gap: 5px;
 }
-.paginationnumber{
+
+.paginationnumber {
     padding: 5px;
     background-color: white;
     width: 20px;
@@ -145,15 +161,65 @@
     border-radius: 5px;
     cursor: pointer;
 }
-.activeIndex{
+
+.paginationnumber:hover {
+    background-color: rgba(9, 184, 210, 0.4);
+}
+
+.activeIndex {
     background-color: rgb(9, 184, 210);
 }
-.arrow{
-    display: flex; 
-    flex-direction: column; 
+
+.arrow {
+    display: flex;
+    flex-direction: column;
     height: 15px;
     justify-content: space-between;
     margin-left: 2px;
     cursor: pointer;
     margin-top: 5px;
+}
+
+.shadow {
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);
+}
+
+.even {
+    background-color: rgb(240, 240, 240);
+}
+
+.paginationbtn {
+    padding: 5px;
+    background-color: rgba(0, 79, 206, 0.75);
+    width: fit-content;
+    height: 20px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.filterscontainer {
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: white;
+    align-items: center;
+}
+
+.bold {
+    margin: 0px;
+    padding: 0px;
+    font-weight: bold;
+    display: inline;
+    font-size: 17px;
+}
+
+.btndiv {
+    margin-left: auto;
+}
+
+.even {
+    background-color: rgb(240, 240, 240);
 }

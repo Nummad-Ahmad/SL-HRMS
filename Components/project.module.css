@@ -57,7 +57,7 @@
 .detaileddata{
     display: flex;
     align-items: center;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgb(225, 225, 225);
     box-sizing: border-box;
     padding:  5px;
     background-color: white;
@@ -83,12 +83,10 @@
     padding-right: 15px;
 }
 .serial{
-    /* width: 47%; */
-    width: 300px;
+    width: 200px;
 }
 .name{
-    /* width: 46%; */
-    width: 300px;
+    width: 250px;
     display: flex;
 }
 .addreq{
@@ -129,19 +127,26 @@
     margin-top: 3px;
 }
 .pagination{
-    margin-top: 20px;
-    width: 200px;
+    background-color: white;
+    padding: 15px 10px;
     display: flex;
+    justify-content: space-between;
     gap: 5px;
+    box-sizing: border-box;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 .paginationnumber{
     padding: 5px;
-    background-color: white;
+    background-color: rgb(210, 210, 210);
     width: 20px;
     height: 20px;
     text-align: center;
     border-radius: 5px;
     cursor: pointer;
+}
+.paginationnumber:hover{
+    background-color: rgba(9, 184, 210, 0.4);
 }
 .activeIndex{
     background-color: rgb(9, 184, 210);
@@ -152,23 +157,56 @@
     width: fit-content;
 }
 .input{
-    border: none;
-    outline: none;
+    margin: 5px;
+    margin-top: 10px;
+    border: 1px solid rgb(210, 210, 210);
+    border-radius: 5px;
     padding: 10px;
-    margin-top: 5px;
-    box-sizing: border-box;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    text-decoration: underline;
-    text-decoration-color: gray;
-    font-size: 13px;
+    width: 350px;
+    outline: none;
+    box-sizing: border-box;
 }
 .inputDiv{
     display: flex;
     align-items: center;
-    /* width: 100%; */
     background-color: white;
-    justify-content: space-between;
-    /* padding-right: 10px; */
+    justify-content: flex-end;
     box-sizing: border-box;
+    margin-left: auto;
+    margin-right: 0px;
+}
+.shadow{
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);
+}
+.filterscontainer{
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+    background-color: white;
+    align-items: center;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.bold{
+    margin: 0px;
+    padding: 0px;
+    font-weight: bold;
+    display: inline;
+    font-size: 17px;
+}
+.even{
+    background-color: rgb(240, 240, 240);
+}
+.paginationbtn{
+    padding: 5px;
+    background-color: rgba(0, 79, 206, 0.75);
+    width: fit-content;
+    height: 20px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
 }

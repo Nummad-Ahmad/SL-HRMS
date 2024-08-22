@@ -5,7 +5,8 @@
     /* background-color: rgb(96, 69, 192); */
     width: 280px;
     padding: 0px 10px;
-    background-color: rgba(0, 79, 206, 0.8);
+    background-color: rgba(0, 79, 206, 0.75);
+    /* background-color: rgb(225, 225, 227); */
 }
 .image{
     margin: 0px;

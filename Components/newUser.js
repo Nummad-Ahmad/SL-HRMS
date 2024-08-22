@@ -69,7 +69,11 @@ export default function NewUserPage() {
         setDepartment(e.target.value);
     }
     function handleBirthday(e) {
-        setBirthday(e.target.value);
+        const date = new Date(e.target.value);
+        const day = date.getDate();
+        const month = date.toLocaleString('en-US', { month: 'long' });
+        const formattedDate = `${day} ${month}`;
+        setBirthday(formattedDate);
     }
     function handleGender(e) {
         setGender(e.target.value);
@@ -122,73 +126,130 @@ export default function NewUserPage() {
             <Header />
             <div className={style.requestscontainer}>
                 <h1> Users &gt; <span className={style.light}>Add User</span> </h1>
-                <div className={style.formDiv}>
-                    <div className={style.question}>
-                        <input className={style.amountinput} onChange={handleName} type="text" placeholder="Enter name" />
+                <div className={style.red}>
+                    {/* <div className={style.formDiv}>
+                        <div className={style.question}>
+                            <input className={style.amountinput} onChange={handleName} type="text" placeholder="Enter name" />
+                        </div>
+                        <div className={style.question}>
+                            <input className={style.amountinput} onChange={handleEmail} type="text" placeholder="Enter email" />
+                        </div>
                     </div>
-                    <div className={style.question}>
-                        <input className={style.amountinput} onChange={handleEmail} type="text" placeholder="Enter email" />
+                    <div className={style.formDiv}>
+                        <div className={style.question}>
+                            <p className={style.p}>Date of birth</p>
+                            <input onChange={handleBirthday} className="dateInput" name='date' id='date' type="date" />
+                        </div>
+                        <div className={style.question}>
+                            <label htmlFor="Department">Department</label>
+                            <select onChange={handleDepartment} value={department}>
+                                {
+                                    currentUserPosition === 'Admin' ?
+                                        departmentArray1.map(type => (
+                                            <option key={type.value} label={type.value}>{type.value}</option>
+                                        )) :
+                                        departmentArray2.map(type => (
+                                            <option key={type.value} label={type.value}>{type.value}</option>
+                                        ))
+                                }
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div className={style.formDiv}>
-                    <div className={style.question}>
-                        <p className={style.p}>Date of birth</p>
-                        <input onChange={handleBirthday} className="dateInput" name='date' id='date' type="date" />
-                    </div>
-                    <div className={style.question}>
-                        <label htmlFor="Department">Department</label>
-                        <select onChange={handleDepartment} value={department}>
-                            {
-                                currentUserPosition === 'Admin' ?
-                                    departmentArray1.map(type => (
-                                        <option key={type.value} label={type.value}>{type.value}</option>
-                                    )) :
-                                    departmentArray2.map(type => (
-                                        <option key={type.value} label={type.value}>{type.value}</option>
-                                    ))
-                            }
-                        </select>
-                    </div>
-                </div>
-                <div className={style.formDiv}>
-                    <div className={style.question}>
-                        <label htmlFor="Gender">Gender</label>
-                        <select onChange={handleGender} value={gender}>
-                            {
-                                genderArray.map(type => (
-                                    <option key={type.value} label={type.value}>{type.value}</option>
-                                ))
-                            }
-                        </select>
-                    </div>
-                    <div className={style.question}>
-                        <label htmlFor="Position">Position</label>
-                        <select onChange={handlePosition} value={position}>
-                            {
-                                currentUserPosition === 'Admin' ?
-                                    positionArray1.map(type => (
-                                        <option key={type.value} label={type.value}>{type.value}</option>
-                                    )) :
-                                    positionArray2.map(type => (
+                    <div className={style.formDiv}>
+                        <div className={style.question}>
+                            <label htmlFor="Gender">Gender</label>
+                            <select onChange={handleGender} value={gender}>
+                                {
+                                    genderArray.map(type => (
                                         <option key={type.value} label={type.value}>{type.value}</option>
                                     ))
-                            }
-                        </select>
+                                }
+                            </select>
+                        </div>
+                        <div className={style.question}>
+                            <label htmlFor="Position">Position</label>
+                            <select onChange={handlePosition} value={position}>
+                                {
+                                    currentUserPosition === 'Admin' ?
+                                        positionArray1.map(type => (
+                                            <option key={type.value} label={type.value}>{type.value}</option>
+                                        )) :
+                                        positionArray2.map(type => (
+                                            <option key={type.value} label={type.value}>{type.value}</option>
+                                        ))
+                                }
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div className={style.formDiv}>
+                    <div className={style.formDiv}>
+                        <div className={style.question}>
+                            <p className={style.p}>Salary</p>
+                            <p onClick={decrement} className={style.sign}>-</p>
+                            <p className={style.p}>{salary}</p>
+                            <p onClick={increment} className={style.sign}>+</p>
+                        </div>
+                        <div className={style.question}>
+                            <input className={style.amountinput} onChange={handlePassword} type="text" placeholder="Enter password" />
+                        </div>
+                    </div> */}
                     <div className={style.question}>
-                        <p className={style.p}>Salary</p>
-                        <p onClick={decrement} className={style.sign}>-</p>
-                        <p className={style.p}>{salary}</p>
-                        <p onClick={increment} className={style.sign}>+</p>
-                    </div>
-                    <div className={style.question}>
-                        <input className={style.amountinput} onChange={handlePassword} type="text" placeholder="Enter password" />
-                    </div>
-                </div>
-                <div className={style.btnDiv}>
-                    <button onClick={handleClick} className={style.btn}>Add</button>
+                            <input className={style.amountinput} onChange={handleName} type="text" placeholder="Enter name" />
+                        </div>
+                        <div className={style.question}>
+                            <input className={style.amountinput} onChange={handleEmail} type="text" placeholder="Enter email" />
+                        </div>
+                        <div className={style.question}>
+                            <p className={style.p}>Date of birth</p>
+                            <input onChange={handleBirthday} className="dateInput" name='date' id='date' type="date" />
+                        </div>
+                        <div className={style.question}>
+                            <label htmlFor="Department">Department</label>
+                            <select onChange={handleDepartment} value={department}>
+                                {
+                                    currentUserPosition === 'Admin' ?
+                                        departmentArray1.map(type => (
+                                            <option key={type.value} label={type.value}>{type.value}</option>
+                                        )) :
+                                        departmentArray2.map(type => (
+                                            <option key={type.value} label={type.value}>{type.value}</option>
+                                        ))
+                                }
+                            </select>
+                        </div>
+                        <div className={style.question}>
+                            <label htmlFor="Gender">Gender</label>
+                            <select onChange={handleGender} value={gender}>
+                                {
+                                    genderArray.map(type => (
+                                        <option key={type.value} label={type.value}>{type.value}</option>
+                                    ))
+                                }
+                            </select>
+                        </div>
+                        <div className={style.question}>
+                            <label htmlFor="Position">Position</label>
+                            <select onChange={handlePosition} value={position}>
+                                {
+                                    currentUserPosition === 'Admin' ?
+                                        positionArray1.map(type => (
+                                            <option key={type.value} label={type.value}>{type.value}</option>
+                                        )) :
+                                        positionArray2.map(type => (
+                                            <option key={type.value} label={type.value}>{type.value}</option>
+                                        ))
+                                }
+                            </select>
+                        </div>
+                        <div className={style.question}>
+                            <p className={style.p}>Salary</p>
+                            <p onClick={decrement} className={style.sign}>-</p>
+                            <p className={style.p}>{salary}</p>
+                            <p onClick={increment} className={style.sign}>+</p>
+                        </div>
+                        <div className={style.question}>
+                            <input className={style.amountinput} onChange={handlePassword} type="text" placeholder="Enter password" />
+                        </div>
+                        <button onClick={handleClick} className={style.btn}>Add</button>
                 </div>
             </div>
         </div>

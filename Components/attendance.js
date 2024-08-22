@@ -24,8 +24,8 @@ export default function AttendancePage() {
         axios.get(`http://localhost:8000/user/${savedUser.user}`).then(res => setRequiredUser(res.data)).catch(e => console.log(e));
     }, []);
     const Position = requiredUser.position;
-    let currentDate = new Date(); 
-    let month = currentDate. getMonth();
+    let currentDate = new Date();
+    let month = currentDate.getMonth();
     const currentMonthName = monthNames[month];
     const filteredData = attendance.filter(item => item.date.includes(currentMonthName));
     const employeeAttendance = filteredData.filter(item => item.username === savedUser.user);
@@ -34,7 +34,7 @@ export default function AttendancePage() {
     const recordsPerPage = 10;
     const lastIndex = selectedIndex * recordsPerPage;
     const firstIndex = lastIndex - recordsPerPage;
-    const records =  (Position === 'Human Resource' || Position === 'Admin') ? filteredData.slice(firstIndex, lastIndex) : employeeAttendance.slice(firstIndex, lastIndex);
+    const records = (Position === 'Human Resource' || Position === 'Admin') ? filteredData.slice(firstIndex, lastIndex) : employeeAttendance.slice(firstIndex, lastIndex);
     const currentPage = Math.ceil(filteredData.length / recordsPerPage);
     const numbers = [...Array(currentPage + 1).keys()].slice(1);
     (month == 0 || month == 2 || 4 || month == 6 || month == 7 || 9 || 11) ? totalDays = 31 : (month == 1) ? totalDays = 28 : totalDays = 30;
@@ -77,64 +77,81 @@ export default function AttendancePage() {
                                         </div>
                                     </div>
                                 </div> */}
-                                <div className={style.details}>
-                                    {/* <div className={style.showmonth}>
+                                <div className={style.shadow}>
+                                    <div className={style.details}>
+                                        {/* <div className={style.showmonth}>
                                         <span onClick={() => setMonth(month - 1)}><FaChevronCircleLeft /></span>
                                         <p className={style.date}>{currentMonthName} 2024</p>
                                         <span onClick={() => setMonth(month + 1)}><FaChevronCircleRight /></span>
                                     </div> */}
-                                    <div className={style.detaileddata}>
-                                        <div className={style.heading}><h3 className={style.h3}>Date</h3></div>
-                                        <div className={style.heading}><h3 className={style.h3}>Time in</h3></div>
-                                        <div className={style.heading}><h3 className={style.h3}>Time out</h3></div>
-                                        <div className={style.heading}><h3 className={style.h3}>Duration</h3></div>
-                                        {
-                                            (Position === 'Human Resource' || Position === 'Admin') &&
-                                            <div className={style.heading}><h3 className={style.h3}>Email</h3></div>
-                                        }
-                                    </div>
-                                    <div className={style.scroll}>
-                                        {
-                                            filteredData.length != 0 &&
-                                            (Position === 'Human Resource' || Position === 'Admin') ?
-                                             records.map((item, index) => {
-                                                return (
-                                                    <div className={style.detaileddata} key={index}>
-                                                        <div className={style.heading}>{item.date}</div>
-                                                        <div className={style.heading}>{item.incomingTime}</div>
-                                                        <div className={style.heading}>{item.outgoingTime}</div>
-                                                        <div className={style.heading}>{item.duration}</div>
-                                                            <div className={style.heading}>{item.username}</div>
-                                                    </div>
+                                        <div className={style.detaileddata}>
+                                            <div className={style.heading}><h3 className={style.h3}>Date</h3></div>
+                                            <div className={style.heading}><h3 className={style.h3}>Time in</h3></div>
+                                            <div className={style.heading}><h3 className={style.h3}>Time out</h3></div>
+                                            <div className={style.heading}><h3 className={style.h3}>Duration</h3></div>
+                                            {
+                                                (Position === 'Human Resource' || Position === 'Admin') &&
+                                                <div className={style.heading}><h3 className={style.h3}>Email</h3></div>
+                                            }
+                                        </div>
+                                        <div className={style.scroll}>
+                                            {
+                                                filteredData.length != 0 &&
+                                                    (Position === 'Human Resource' || Position === 'Admin') ?
+                                                    records.map((item, index) => {
+                                                        return (
+                                                            <div className={`${style.detaileddata} ${ index % 2 == 1 ? style.even : ''}`} key={index}>
+                                                                <div className={style.heading}>{item.date}</div>
+                                                                <div className={style.heading}>{item.incomingTime}</div>
+                                                                <div className={style.heading}>{item.outgoingTime}</div>
+                                                                <div className={style.heading}>{item.duration}</div>
+                                                                <div className={style.heading}>{item.username}</div>
+                                                            </div>
 
-                                                );
-                                            }) :
-                                            records.map((item, index) => {
-                                                return (
-                                                    <div className={style.detaileddata} key={index}>
-                                                        <div className={style.heading}>{item.date}</div>
-                                                        <div className={style.heading}>{item.incomingTime}</div>
-                                                        <div className={style.heading}>{item.outgoingTime}</div>
-                                                        <div className={style.heading}>{item.duration}</div>
-                                                        
-                                                    </div>
+                                                        );
+                                                    }) :
+                                                    records.map((item, index) => {
+                                                        return (
+                                                            <div className={style.detaileddata} key={index}>
+                                                                <div className={style.heading}>{item.date}</div>
+                                                                <div className={style.heading}>{item.incomingTime}</div>
+                                                                <div className={style.heading}>{item.outgoingTime}</div>
+                                                                <div className={style.heading}>{item.duration}</div>
 
-                                                );
-                                            }) 
-                                        }
+                                                            </div>
+
+                                                        );
+                                                    })
+                                            }
+                                        </div>
+                                        <div className={style.flex}>
+                                            {
+                                                (Position === 'Human Resource' || Position === 'Admin') ? 
+                                                (lastIndex > filteredData.length ?
+                                                    <span>Showing <p className={style.bold}>{((filteredData.length) )}</p> of <p className={style.bold}>{filteredData.length}</p></span> :
+                                                    <span>Showing <p className={style.bold}>{lastIndex}</p> of <p className={style.bold}>{filteredData.length}</p></span>) : 
+                                                (lastIndex > employeeAttendance.length ?
+                                                    <span>Showing <p className={style.bold}>{((lastIndex - employeeAttendance.length) - recordsPerPage) * -1}</p> of <p className={style.bold}>{employeeAttendance.length}</p></span> :
+                                                    <span>Showing <p className={style.bold}>{lastIndex}</p> of <p className={style.bold}>{employeeAttendance.length}</p></span>)    
+                                            }
+                                            <span className={style.pagination}>
+                                            <div onClick={() => selectedIndex != 1 && setSelectedIndex(selectedIndex-1)} className={`${style.paginationbtn} `}>Prev</div>
+
+                                                {
+                                                    numbers.map((data, index) => {
+                                                        return (
+                                                            <>
+                                                                <div onClick={() => setSelectedIndex(data)} key={index} className={`${style.paginationnumber} ${selectedIndex == data ? style.activeIndex : ''}`}>{data}</div>
+                                                            </>
+                                                        )
+                                                    })
+                                                }
+                                                <div onClick={() => ((Position === 'Human Resource' || Position === 'Admin') ? lastIndex < filteredData.length-1 && setSelectedIndex(selectedIndex+1) : lastIndex < employeeAttendance.length-1 && setSelectedIndex(selectedIndex+1) ) } className={`${style.paginationbtn} `}>Next</div>
+
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
-                                <span className={style.pagination}>
-                                {
-                                    numbers.map((data, index) => {
-                                        return (
-                                            <>
-                                                <div onClick={() => setSelectedIndex(data)} key={index} className={`${style.paginationnumber} ${selectedIndex == data ? style.activeIndex : ''}`}>{data}</div>
-                                            </>
-                                        )
-                                    })
-                                }
-                            </span>
                             </>
                             :
                             <>

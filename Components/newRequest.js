@@ -43,6 +43,10 @@ export default function NewRequestPage() {
         setStatus(e.target.value);
     }
     function handleDate(e) {
+        const date = new Date(e.target.value);
+        const day = date.getDate();
+        const month = date.toLocaleString('en-US', { month: 'long' });
+        const formattedDate = `${day} ${month}`;
         setDate(e.target.value);
     }
     function handleClick() {
@@ -68,7 +72,7 @@ export default function NewRequestPage() {
             <Header />
             <div className={style.requestscontainer}>
                 <h1> Requests &gt; <span className={style.light}>New Request</span> </h1>
-                <div className={style.formDiv}>
+                {/* <div className={style.formDiv}>
                     <div className={style.question}>
                         <label for="Leave type">Leave type</label>
                         <select onChange={handleType} value={type}>
@@ -106,10 +110,48 @@ export default function NewRequestPage() {
                         <p className={style.p}>Date</p>
                         <input onChange={handleDate} className={style.select} name='date' id='date' type="date" />
                     </div>
-                </div>
-                <div className={style.btnDiv}>
+                </div> */}
+                <div className={style.maincontainer}>
+                    <div className={style.question}>
+                        <label for="Leave type">Leave type</label>
+                        <select onChange={handleType} value={type}>
+                            {
+                                typeArray.map(type => (
+                                    <option key={type.value} label={type.value}>{type.value}</option>
+                                ))
+                            }
+                        </select>
+                    </div>
+                    <div className={style.question}>
+                        <label for="Total days">Total days</label>
+                        <select onChange={handleDays} value={days}>
+                            {
+                                dayArray.map(type => (
+                                    <option key={type.value} label={type.value}>{type.value}</option>
+                                ))
+
+                            }
+                        </select>
+                    </div>
+                    <div className={style.question}>
+                        <label for="Leave status">Leave status</label>
+                        <select className={style.select} onChange={handleStatus} value={status}>
+                            {
+                                statusArray.map(type => (
+                                    <option key={type.value} label={type.value}>{type.value}</option>
+                                ))
+                            }
+                        </select>
+                    </div>
+                    <div className={style.question}>
+                        <p className={style.p}>Date</p>
+                        <input onChange={handleDate} className={style.select} name='date' id='date' type="date" />
+                    </div>
                     <button onClick={handleClick} className={style.btn}>Add</button>
                 </div>
+                {/* <div className={style.btnDiv}>
+                    <button onClick={handleClick} className={style.btn}>Add</button>
+                </div> */}
             </div>
         </div>
     );

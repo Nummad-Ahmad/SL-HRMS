@@ -56,73 +56,93 @@ export default function RequestsPage() {
                 {
                     requests.length != 0 ?
                         <>
-                            <div className={style.btnContainer}>
-                            </div>
-                            <div className={style.statscontainer}>
-                                <div className={style.headingspart}>
-                                    <p className={style.type}><h3 className={style.h3}>Leave Type</h3></p>
-                                    <p className={style.days}><h3 className={style.h3}>Total Days</h3></p>
-                                    <p className={style.date}><h3 className={style.h3}>Date</h3></p>
-                                    <p className={style.status}><h3 className={style.h3}>Status</h3></p>
-                                    {
-                                        (Position === 'Human Resource' || Position === 'Admin') &&
-                                        <p className={style.email}>
-                                            <h3 className={style.h3}>
-                                                Email
-                                                <span className={style.arrowcontainer}>
-                                                    <div className={style.arrow}><FaArrowUp onClick={() => ascendingSort()} size={6} /><FaArrowDown onClick={() => descendingSort()} size={6} /></div>
-                                                </span>
-                                            </h3></p>
-                                    }
+                            <div className={style.shadow}>
+                                <div className={style.btnContainer}>
                                 </div>
-                            </div>
-                            <div className={style.details}>
-                                <div className={style.scroll}>
+                                <div className={style.statscontainer}>
+                                    <div className={style.headingspart}>
+                                        <p className={style.type}><h3 className={style.h3}>Leave Type</h3></p>
+                                        <p className={style.days}><h3 className={style.h3}>Days</h3></p>
+                                        <p className={style.date}><h3 className={style.h3}>Date</h3></p>
+                                        <p className={style.status}><h3 className={style.h3}>Status</h3></p>
+                                        {
+                                            (Position === 'Human Resource' || Position === 'Admin') &&
+                                            <p className={style.email}>
+                                                <h3 className={style.h3}>
+                                                    Email
+                                                    <span className={style.arrowcontainer}>
+                                                        <div className={style.arrow}><FaArrowUp onClick={() => ascendingSort()} size={6} /><FaArrowDown onClick={() => descendingSort()} size={6} /></div>
+                                                    </span>
+                                                </h3></p>
+                                        }
+                                        <div className={style.btndiv}>
+                                            <button onClick={() => router.push('./newrequest')} className={style.addbutton}>Add request</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className={style.details}>
+                                    <div className={style.scroll}>
+                                        {
+                                            (Position === 'Human Resource' || Position === 'Admin') ?
+                                                records.map((item, index) => {
+                                                    return (
+                                                        <div className={`${style.detaileddata} ${index % 2 == 1 ? style.even : ''}`} key={index}>
+                                                            <div className={style.type}>{item.leaveType}</div>
+                                                            <div className={style.days}>{item.days}</div>
+                                                            <div className={style.date}>{item.leaveDate}</div>
+                                                            <div className={style.status}>{item.leaveStatus}</div>
+                                                            {
+                                                                (Position === 'Human Resource' || Position === 'Admin') &&
+                                                                <div className={style.email}>{item.email}</div>
+                                                            }
+                                                        </div>
+
+                                                    );
+                                                }) :
+                                                records.map((item, index) => {
+                                                    return (
+                                                        <div className={style.detaileddata} key={index}>
+                                                            <div className={style.type}>{item.leaveType}</div>
+                                                            <div className={style.days}>{item.days}</div>
+                                                            <div className={style.date}>{item.leaveDate}</div>
+                                                            <div className={style.status}>{item.leaveStatus}</div>
+
+                                                        </div>
+
+                                                    );
+                                                })
+                                        }
+                                    </div>
+                                </div>
+                                <div className={style.filterscontainer}>
                                     {
                                         (Position === 'Human Resource' || Position === 'Admin') ?
-                                            records.map((item, index) => {
-                                                return (
-                                                    <div className={style.detaileddata} key={index}>
-                                                        <div className={style.type}>{item.leaveType}</div>
-                                                        <div className={style.days}>{item.days}</div>
-                                                        <div className={style.date}>{item.leaveDate}</div>
-                                                        <div className={style.status}>{item.leaveStatus}</div>
-                                                        {
-                                                            (Position === 'Human Resource' || Position === 'Admin') &&
-                                                            <div className={style.email}>{item.email}</div>
-                                                        }
-                                                    </div>
-
-                                                );
-                                            }) :
-                                            records.map((item, index) => {
-                                                return (
-                                                    <div className={style.detaileddata} key={index}>
-                                                        <div className={style.type}>{item.leaveType}</div>
-                                                        <div className={style.days}>{item.days}</div>
-                                                        <div className={style.date}>{item.leaveDate}</div>
-                                                        <div className={style.status}>{item.leaveStatus}</div>
-
-                                                    </div>
-
-                                                );
-                                            })
+                                            (lastIndex > requests.length ?
+                                                <span>Showing <p className={style.bold}>{((requests.length))}</p> of <p className={style.bold}>{requests.length}</p></span> :
+                                                <span>Showing <p className={style.bold}>{lastIndex}</p> of <p className={style.bold}>{filteredData.length}</p></span>) :
+                                            (lastIndex > filteredData.length ?
+                                                <span>Showing <p className={style.bold}>{((lastIndex - filteredData.length) - recordsPerPage) * -1}</p> of <p className={style.bold}>{filteredData.length}</p></span> :
+                                                <span>Showing <p className={style.bold}>{lastIndex}</p> of <p className={style.bold}>{filteredData.length}</p></span>)
                                     }
+                                    <span className={style.pagination}>
+                                        <div onClick={() => selectedIndex != 1 && setSelectedIndex(selectedIndex - 1)} className={`${style.paginationbtn} `}>Prev</div>
+
+                                        {
+                                            numbers.map((data, index) => {
+                                                return (
+                                                    <>
+                                                        <div onClick={() => setSelectedIndex(data)} key={index} className={`${style.paginationnumber} ${selectedIndex == data ? style.activeIndex : ''}`}>{data}</div>
+                                                    </>
+                                                )
+                                            })
+                                        }
+                                        <div onClick={() => ((Position === 'Human Resource' || Position === 'Admin') ? lastIndex < requests.length - 1 && setSelectedIndex(selectedIndex + 1) : lastIndex < filteredData.length - 1 && setSelectedIndex(selectedIndex + 1))} className={`${style.paginationbtn} `}>Next</div>
+
+                                    </span>
                                 </div>
-                            </div>
-                            <span className={style.pagination}>
-                                {
-                                    numbers.map((data, index) => {
-                                        return (
-                                            <>
-                                                <div onClick={() => setSelectedIndex(data)} key={index} className={`${style.paginationnumber} ${selectedIndex == data ? style.activeIndex : ''}`}>{data}</div>
-                                            </>
-                                        )
-                                    })
-                                }
-                            </span>
-                            <div className={style.addreq}>
+                                {/* <div className={style.addreq}>
                                 <button onClick={() => router.push('./newrequest')} className={style.addbutton}>Add request</button>
+                            </div> */}
                             </div>
                         </>
                         :
