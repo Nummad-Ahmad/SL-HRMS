@@ -46,7 +46,6 @@ export default function RequestsPage() {
     }
     function handleChange(e) {
         setText(e.target.value);
-        console.log(text.length);
         if (text.length == 1) {
             setClicked(false);
         }

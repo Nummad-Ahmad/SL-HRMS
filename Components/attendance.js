@@ -21,7 +21,11 @@ export default function AttendancePage() {
     const [attendance, setAttendance] = useState([]);
     useEffect(() => {
         axios.get('http://localhost:8000/attendance').then(res => setAttendance(res.data)).catch(e => console.log(e));
-        axios.get(`http://localhost:8000/user/${savedUser.user}`).then(res => setRequiredUser(res.data)).catch(e => console.log(e));
+
+        axios.get(`http://localhost:8000/user/${savedUser.user}`)
+        .then(res => setRequiredUser(res.data))
+        .catch(e => console.log(e));
+
     }, []);
     const Position = requiredUser.position;
     let currentDate = new Date();
