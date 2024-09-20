@@ -1,5 +1,4 @@
 const express = require('express');
-// conStr = "mongodb+srv://nummadtech:zfjektln@cluster0.l41ioic.mongodb.net/";
 conStr = "mongodb://localhost:27017";
 const mongoose = require('mongoose');
 const cors = require('cors');
